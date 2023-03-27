@@ -1,0 +1,12 @@
+
+<img (error)="evitarError()" (load)="actualizar()"   *ngIf="img && showImgUno; else elseImg;" [src]="img" >
+<ng-template #elseImg>
+    
+</ng-template>
+
+<p><strong>Segundos De Visualizacion De La Imagen : </strong>{{counter}}</p>
+
+<img (error)="evitarErrorImg2()" (load)="actualizar()"   *ngIf="img2 && showImgDos ; else elseImg2;" [src]="img2" >
+<ng-template #elseImg2>
+    
+</ng-template>

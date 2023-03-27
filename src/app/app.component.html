@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            
+            <!-- <p>{{showImg}}</p> -->
+            <button (click)="toggleImg()"  >{{boton}}</button>
+
+            <label for="">Ingresa Tu Link De Imagen:  </label> 
+            <input type="text" [(ngModel)]="imgParent">
+
+            <br><br><br>
+
+            <button (click)="toggleImg2()"  >{{boton2}}</button>
+            <label for="">Ingresa Tu Link De Imagen 2:  </label> 
+            <input type="text" [(ngModel)]="imgParent2">
+            <div>
+                <app-img *ngIf="showImg||showImg2"  (imgActualizado)="ConfirmarActualizacionImg()" [showImgUno]="showImg" [showImgDos]="showImg2" [img]="imgParent" [changeImg2]="imgParent2"></app-img>
+            </div>
+            <br><br><br>
+            <label ><strong>LISTADO DE PRODUCTOS</strong></label><br>
+            <div class="products">
+                <app-product [product]="actualProduct" *ngFor="let actualProduct of products; index as indice"></app-product>
+            </div>
+        </main>
+    </body>
+
+    <footer></footer>
+</html>
+   
+
+
+
+
